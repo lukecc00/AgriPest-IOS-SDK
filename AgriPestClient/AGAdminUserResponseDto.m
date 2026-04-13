@@ -1,0 +1,34 @@
+#import "AGAdminUserResponseDto.h"
+
+@implementation AGAdminUserResponseDto
+
+- (instancetype)init {
+  self = [super init];
+  if (self) {
+    // initialize property's default value, if any
+    
+  }
+  return self;
+}
+
+
+/**
+ * Maps json key to property name.
+ * This method is used by `JSONModel`.
+ */
++ (JSONKeyMapper *)keyMapper {
+  return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{ @"_id": @"id", @"username": @"username", @"phone": @"phone", @"role": @"role", @"createdAt": @"createdAt", @"fullName": @"fullName", @"avatarUrl": @"avatarUrl", @"bio": @"bio", @"location": @"location", @"followedCrops": @"followedCrops", @"historyRecognitionCount": @"historyRecognitionCount" }];
+}
+
+/**
+ * Indicates whether the property with the given name is optional.
+ * If `propertyName` is optional, then return `YES`, otherwise return `NO`.
+ * This method is used by `JSONModel`.
+ */
++ (BOOL)propertyIsOptional:(NSString *)propertyName {
+
+  NSArray *optionalProperties = @[@"_id", @"username", @"phone", @"role", @"createdAt", @"fullName", @"avatarUrl", @"bio", @"location", @"followedCrops", @"historyRecognitionCount"];
+  return [optionalProperties containsObject:propertyName];
+}
+
+@end
